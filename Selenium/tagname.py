@@ -15,8 +15,8 @@ for campo in campos:
     print(valor)
 
 print('\n')
-# CONCATENAR BUSCAS PARA FILTRAR MELHOR
 
+# CONCATENAR BUSCAS PARA FILTRAR MELHOR
 rede_social = driver.find_element(By.ID, 'social').find_elements(By.TAG_NAME, 'span')
 rede_social
 for rs in rede_social:
