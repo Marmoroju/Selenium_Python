@@ -39,10 +39,43 @@ parent = driver.find_elements(By.CSS_SELECTOR, 'div.main-container input.optiona
 # Selecionar apenas determinadas tags em uma DIV com o ID #social
 # Aqui irá trazer todos os nomes das redes sociais da página
 link = driver.find_elements(By.CSS_SELECTOR, 'div#social > a')
-link
-for l in link:
-    value = l.get_property('innerText')
-    print(value)
 
-driver.quit()
+#link
+#for l in link:
+#    value = l.get_property('innerText')
+#    print(value)
+#
+#driver.quit()
 
+# Retorna todo o parentesco da div e classe main-container
+todoParentesco = driver.find_elements(By.CSS_SELECTOR, 'div.main-container *')
+
+# Retorna todos os atributos da classe #social e seus parentescos
+
+link = driver.find_elements(By.CSS_SELECTOR, 'div#social > *')
+#for lk in link:
+#    print(lk.tag_name, '=>', lk.get_property('className'))
+
+
+## PROPRIEDADES E ATRIBUTOS ##
+
+# Encontra todas as tags input que contenha a propriedade name=fullname
+driver.find_elements(By.CSS_SELECTOR, 'input[name="fullname"]')
+
+# Encontra todas as tags input que contenha apenas a propriedade definida e ainda refinar a busca
+driver.find_elements(By.CSS_SELECTOR, 'input[disable]')
+
+driver.find_elements(By.CSS_SELECTOR, 'input[disable] [data-optinonal="true]')
+
+# Busca por SUFIXO
+driver.find_elements(By.CSS_SELECTOR, 'input[value$="ino"]')
+driver.find_elements(By.CSS_SELECTOR, '[class$="gram"]')
+
+# Busca por PREFIXO
+driver.find_elements(By.CSS_SELECTOR, '[name^="user"]')
+
+# Busca por palavra que contenha HÍFEN
+driver.find_elements(By.CSS_SELECTOR, '[class|="text"]')
+
+# Busca por SUBSTRING que contenha um determinado caractere
+driver.find_elements(By.CSS_SELECTOR, 'input[id*="e"]')
