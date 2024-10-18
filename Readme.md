@@ -1,11 +1,11 @@
-Iniciar o servidor http através do python
-```bash
-python -m http.server -d dist/
-```
-
 Iniciar a biblioteca Selenium
 ```bash
 pip install selenium
+```
+
+Iniciar o servidor http através do python
+```bash
+python -m http.server -d dist/
 ```
 
 Manter navegador aberto
