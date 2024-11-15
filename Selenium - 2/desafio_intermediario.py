@@ -19,7 +19,7 @@ driver.implicitly_wait(time_to_wait=10)
 #BUSCAR DADOS DE USUARIOS
 driver.refresh()
 
-@dataclass
+@dataclass # torna a classe Usuario uma classe de dados, assim cria uma instância/objeto com os dados solicitados.
 class Usuario:
     foto: str
     nome: str
@@ -53,7 +53,7 @@ for usuario in usuarios:
     wait.until(EC.visibility_of_all_elements_located(locator=locator))
     users = driver.find_elements(By.CSS_SELECTOR, 'div.users-list > div')
 
-    # faz a iteração na lista "users" com os usuarios encontrados
+    # faz a iteração das informações recolhidas na URL através da lista "users" com os usuarios encontrados
     for user in users:
         foto = user.find_element(By.TAG_NAME, 'img')
         nome = user.find_element(By.TAG_NAME, 'h3')
@@ -63,7 +63,7 @@ for usuario in usuarios:
         perfil = user.find_element(By.CSS_SELECTOR, 'ul > li:nth-child(3)')
         estado = user.find_element(By.CSS_SELECTOR, 'ul > li:nth-child(4)')
         
-        # salva os dados obtidos na estrutura Usuario
+        # salva os dados obtidos na CLASSE Usuario -> objeto @dataclass Usuario
         dados_do_usuario = Usuario(
             foto = foto.get_attribute('src'),
             nome = nome.text,
