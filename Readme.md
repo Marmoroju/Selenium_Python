@@ -15,3 +15,13 @@ from IPython.display import HTML
 driver = webdriver.Chrome()
 HTML(driver.page_source)
 ```
+
+Instalar módulo Pandas para captura de tabelas
+```bash
+pip install pandas
+```
+
+Instalar a módulo lxml para fazer o webscrapping da página
+```bash
+pip install lxml
+```
