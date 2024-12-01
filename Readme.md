@@ -25,3 +25,8 @@ Instalar a módulo lxml para fazer o webscrapping da página
 ```bash
 pip install lxml
 ```
+
+Instalar módulo Clipboard para capturar dados armazenados no CTRL+C
+```bash
+pip install clipboard
+```
